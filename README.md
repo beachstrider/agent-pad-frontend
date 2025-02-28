@@ -1,5 +1,7 @@
 # Pump Fun UI
 
+![image](https://github.com/user-attachments/assets/6aa339c2-03fb-4c98-b168-d72e01d72c0e)
+
 Pump Fun UI is a Next.js-based web application for interacting with the Pump Fun platform.
 
 ## Table of Contents
