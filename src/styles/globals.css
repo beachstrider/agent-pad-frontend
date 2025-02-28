@@ -1,0 +1,179 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Space+Grotesk:wght@300..700&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #0D0D0D;
+  --foreground: #ffffff;
+  --border: #323138;
+  --grey: #C4CBDBCC;
+  --primary: #FECE00;
+  --primary-200: #FECE0033;
+  --primary-800: #E5BA00;
+  --primary-hover: #a58700;
+  --card: #18181C;
+  --card2: #00000033;
+  --card-hover: #2a2a2a;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: 'Poppins', sans-serif;
+}
+
+.main-wrapper {
+  @apply mx-auto max-w-[1440px] px-5;
+}
+
+.card {
+  border-radius: 10px;
+  background-color: var(--card);
+}
+
+.card2 {
+  padding: 0.625rem 1.25rem;
+  border-radius: 10px;
+  background-color: var(--card2);
+}
+
+.truncateWrapper {
+  display: grid;
+  grid-template-columns: auto auto
+}
+
+.block-gradient {
+  background: linear-gradient(to bottom, #272727, #111111);
+}
+
+.progress {
+  height: 30px;
+  @apply relative bg-primary/20 rounded-[10px];
+}
+.progress > .bar {
+  @apply h-full transition-all duration-500 rounded-[10px];
+  background-size: 1.25rem 1.25rem;
+  background-image: linear-gradient(-45deg,var(--primary-800) 25%,var(--primary) 25%,var(--primary) 50%,var(--primary-800) 50%,var(--primary-800) 75%,var(--primary) 75%,var(--primary));
+}
+.progress > .label {
+  @apply text-primary absolute top-1 right-4;
+}
+.font-title {
+  font-family: 'Bebas Neue', sans-serif;
+}
+
+.badge {
+  @apply px-3 py-2 flex items-center justify-center gap-0.5 text-sm leading-none;
+  border-radius: 5px;
+  text-transform: uppercase;
+}
+
+.badge-primary {
+  @apply bg-primary/20 text-primary;
+}
+
+.badge-red {
+  @apply bg-red/20 text-red;
+}
+
+@layer base {
+  h1, h2, h3, h4, h5, h6 {
+    /* @apply font-bold mb-4; */
+  }
+
+  h1 {
+    @apply text-3xl md:text-4xl;
+  }
+
+  h2 {
+    @apply text-2xl md:text-3xl;
+  }
+
+  h3 {
+    @apply text-xl md:text-2xl;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply px-4 py-2 rounded-md transition-colors duration-200;
+  }
+
+  .btn-primary {
+    @apply bg-[var(--primary)] text-black px-4 py-2 rounded-[10px] hover:bg-[var(--primary-hover)] transition-colors disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  .btn-primary-light {
+    @apply bg-primary/20 text-primary px-4 py-2 rounded-[10px] hover:bg-[var(--primary-hover)] transition-colors disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  .btn-secondary {
+    @apply bg-[var(--card)] text-white px-4 py-2 rounded-[10px] hover:bg-[var(--card-hover)] transition-colors;
+  }
+
+  .btn-circle {
+    @apply text-title bg-white/20 rounded-full p-1.5 hover:bg-white/30;
+  }
+
+  .btn-pagination {
+    @apply flex items-center justify-center text-subtext hover:text-title disabled:opacity-50 disabled:cursor-not-allowed;
+    width: 30px;
+    height: 30px;
+  }
+  .btn-pagination.active {
+    @apply border-b-[2px] border-primary;
+  }
+  .form-input {
+    @apply w-full py-2 px-3 bg-[var(--card2)] border border-stroke1 rounded-md text-white focus:outline-none focus:ring-[var(--primary)] focus:border-[var(--primary)] transition duration-150 ease-in-out;
+  }
+  .shine-overlay {
+    position:fixed;
+    bottom: -150px;
+    width: 100%;
+    height: 300px;
+    left: 0px;
+    z-index: -1;
+    background-color: var(--primary);
+    filter:blur(150px);
+    border-radius: 50%;
+    opacity: 50%;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .neon-text {
+    text-shadow: 0 0 5px rgb(var(--accent-color)), 0 0 10px rgb(var(--accent-color)), 0 0 15px rgb(var(--accent-color));
+  }
+
+  .neon-border {
+    box-shadow: 0 0 5px var(--primary),
+                0 0 10px var(--primary),
+                0 0 15px var(--primary);
+  }
+}
+
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: var(--card);
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #444444;
+  border-radius: 3px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #555555;
+}
